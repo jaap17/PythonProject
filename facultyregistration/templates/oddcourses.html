@@ -1,0 +1,126 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'facultyregistration/css/test1.css %}'" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+             background-image:url('{% static "facultyregistration/images/msu.png"  %}');
+             background-size:cover;
+        }
+    </style>
+</head>
+<center> <h1>ODD SEMESTER SUBJECTS LIST</h1></center><br>
+<table>
+    <tr><td>
+        <h2>
+<table border="1" height="300" width="200">
+    <tr><td colspan="2" align="center"><h1>Semester3 Subjects</h1></td></tr>
+    <tr>
+        <td><font size="5">CourseName</font></td>
+        <td><font size="5">CourseId</font></td>
+    </tr>
+{% for sem in Sem3 %}
+
+    <tr>
+        <td>
+            <font size="5">{{ sem.CourseName }}</font>
+
+        </td>
+        <td>  <font size="5">{{ sem.CourseId }}</font></td>
+    </tr>
+{% endfor %}
+    <tr>
+        <td>
+            <form method="post" action="/facultyregistration/calladdcourse/">
+                {% csrf_token %}
+                <input type="submit" value="ADD COURSE">
+            </form>
+
+        </td>
+        <td>
+            <form method="post" action="/facultyregistration/callremovecourse/">
+                {% csrf_token %}
+                <input type="submit" value="REMOVE COURSE">
+            </form>
+        </td>
+    </tr>
+</table>
+        </h2>
+    </td>
+        <td>
+            <h2>
+<table border="1" height="500" width="200">
+   <tr><td colspan="2" align="center"><h1>Semester5 Subjects</h1></td></tr>
+    <tr>
+        <td><font size="5">CourseName</font></td>
+        <td><font size="5">CourseId</font></td>
+    </tr>
+{% for sem in Sem5 %}
+
+    <tr>
+        <td>
+            <font size="5">{{ sem.CourseName }}</font>
+
+        </td>
+        <td>  <font size="5">{{ sem.CourseId }}</font></td>
+    </tr>
+{% endfor %}
+    <tr>
+        <td>
+            <form method="post" action="/facultyregistration/calladdcourse/">
+                {% csrf_token %}
+                <input type="submit" value="ADD COURSE">
+            </form>
+
+        </td>
+        <td>
+            <form method="post" action="/facultyregistration/callremovecourse/">
+                {% csrf_token %}
+                <input type="submit" value="REMOVE COURSE">
+            </form>
+        </td>
+    </tr>
+</table>
+            </h2></td>
+
+        <td>
+            <h2><table border="1" height="500" width="200">
+    <tr><td colspan="2" align="center"><h1>Semester7 Subjects</h1></td></tr>
+    <tr>
+        <td><font size="5">CourseName</font></td>
+        <td><font size="5">CourseId</font></td>
+    </tr>
+{% for sem in Sem7 %}
+
+    <tr>
+        <td>
+            <font size="5">{{ sem.CourseName }}</font>
+
+        </td>
+        <td>  <font size="5">{{ sem.CourseId }}</font></td>
+    </tr>
+{% endfor %}
+    <tr>
+        <td>
+            <form method="post" action="/facultyregistration/calladdcourse/">
+                {% csrf_token %}
+                <input type="submit" value="ADD COURSE">
+            </form>
+
+        </td>
+        <td>
+            <form method="post" action="/facultyregistration/callremovecourse/">
+                {% csrf_token %}
+                <input type="submit" value="REMOVE COURSE">
+            </form>
+        </td>
+    </tr>
+             </table>
+            </h2></td>
+    </tr>
+</table>
+<br>
+
+{% endblock %}

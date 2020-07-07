@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="{% static 'facultyregistration/css/test1.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+            background-image:url('{% static "facultyregistration/images/oxford1.png" %}');
+        }
+    </style>
+</head>
+<body >
+
+<b><center><img src="{% static 'facultyregistration/images/ddu.png' %}" width="160" height="80"><font size="7">Course Allocation System</font></center></b>
+<h5 align="right"><a href="http://127.0.0.1:8000/loginmodule/loggedin/"><font size="5">Homepage</font></a></h5>
+<h5 align="right"><a href="http://127.0.0.1:8000/loginmodule/logout/"><font size="5">Logout</font></a></h5>
+<hr>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

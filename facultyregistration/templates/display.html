@@ -1,0 +1,37 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'facultyregistration/css/test1.css' %}" rel="stylesheet" type="text/css">
+    <style>
+    body
+    {
+        background-image:url('{% static "facultyregistration/images/oxford2.png" %}');
+    }
+    </style>
+</head>
+<h1> Bravo!!! {{ facname }} You completed Choice Filling of The subjects</h1>
+<h1>Your Selected choices are as shown below PriorityWise (From the Highest Priority[1] to the Least Priority[5]) </h1><br>
+<h4>
+<table border="1" align="center">
+    <tr>
+        <td>PriorityNo</td>
+        <td>Priority1</td>
+        <td>Priority2</td>
+        <td>Priority3</td>
+        <td>Priority4</td>
+        <td>Priority5</td>
+    </tr>
+    <tr>
+        <td>Selected Course Name</td>
+{% for cid in priority   %}
+
+        <td>{{cid.CourseName}}({{cid.CourseId}})</td>
+
+{% endfor %}
+    </tr>
+</table>
+</h4>
+
+
+{% endblock %}

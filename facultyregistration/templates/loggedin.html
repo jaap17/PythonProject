@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'facultyregistration/css/test1.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+            background-image:url('{% static "facultyregistration/images/oxford2.png"  %}');
+        }
+    </style>
+</head>
+{% for fac in user %}
+<center>
+<font size="7" color="red"><b>Welcome {{fac.FacName}}</b></font>
+    <img src="{% static 'facultyregistration/images/user.png' %} " height="50" width="50"></center>
+{% endfor %}
+
+<br><br>
+<h1>Select the task you want to do</h1>
+{% for message in sem %}
+<h2>
+
+<form method="get" action="{{message.path}}">
+
+    <input type="submit" value="Choice Filling Form">
+    {% for fac in user %}
+        <input type="hidden" value="{{ fac.FacName }}" name="facultyname">
+    {% endfor %}
+    <input type="hidden" value="{{message.path}}" name="path">
+</form>
+<br><br>
+<form method="get" action="/CourseAllocation/facultyallocation/">
+
+    <input type="submit" value="View Allocation">
+    {% for fac in user %}
+        <input type="hidden" value="{{fac.FacName}}" name="name">
+    {% endfor %}
+{% endfor %}
+</form></h2>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'CourseAllocation/css/test2.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+            background-image:url('{% static "CourseAllocation/images/oxford2.png" %}');
+        }
+    </style>
+</head>
+<h1><center><font size="5">You are signed in as {{hodname}} Hod Sir!!!</font><img src="{% static 'CourseAllocation/images/user.png' %}" width="50" height="50"></center></h1>
+<h1> The allocation that you have done is as shown under</h1>
+
+<table border="1" bgcolor="orange">
+    <tr>
+        <td><font size="5">Faculty Name</font></td>
+        {% for subject in list  %}
+         <td><font size="5">{{subject.FacName}}</font></td>
+        {% endfor %}
+    </tr>
+<tr>
+       <td> <font size="5">Allocated Subject</font></td>
+{% for subject in list  %}
+    <td><font size="5">{{subject.SubjectName}}</font></td>
+{% endfor %}
+</tr>
+</table>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="{% static 'facultyregistration/css/test1.css' %}" rel="stylesheet" type="text/css">
+     <style>
+        body
+        {
+            background-image:url('{% static "facultyregistration/images/oxford1.png" %}');
+        }
+    </style>
+</head>
+<body >
+<font size="10">You are Signed in as {{user}} <img src="{% static 'facultyregistration/images/user.png' %}" width="50" height="50"> </font>
+<b><center><img src="{% static 'facultyregistration/images/ddu.png' %}" height="80" width="160"><font size="10">Course Allocation System</font></center></b>
+<h3 align="right"><a href="http://127.0.0.1:8000/loginmodule/logout/">Logout</a></h3>
+<hr>
+    {% block content %}
+    <h2>{{message}}</h2>
+    {% endblock %}
+
+</body>
+</html>

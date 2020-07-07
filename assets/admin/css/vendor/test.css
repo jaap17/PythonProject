@@ -1,0 +1,22 @@
+h2
+{
+
+        border-style:dashed;
+        width: 300px;
+        border: 15px;
+        padding: 50px;
+        margin: 20px;
+        background-color: white;
+}
+body
+{
+    background-image:url("photo.png")
+    background-repeat:no-repeat
+}
+h1
+{
+    background-color:green;
+	border-style:solid;
+    border-color:blueviolet;
+    border-radius: 20px;
+}

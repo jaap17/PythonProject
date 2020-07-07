@@ -1,0 +1,41 @@
+h2
+{
+
+        border-style:dashed;
+        width: 300px;
+        border: 5px solid;
+        padding: 50px;
+        margin: 20px;
+        background-color: orange;
+}
+body
+{
+    background-image:url("facultyregistration/images/oxford.png");
+    background-repeat:no-repeat;
+}
+h1
+{
+    background-color:cyan;
+	border-style:solid;
+    border-color:blueviolet;
+    border-radius: 20px;
+}
+h4
+{
+
+        border-style:dashed;
+        width: 700px;
+        border: 5px solid;
+        padding: 50px;
+        margin: 20px;
+        background-color: orange;
+}
+h3
+{
+    border-style:dashed;
+    width: 700px;
+    border: 5px solid;
+    padding:10px;
+    background-color: grey;
+    align:right;
+}

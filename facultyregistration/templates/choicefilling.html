@@ -1,0 +1,129 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <style>
+        body
+        {
+            background-image:url('{% static "facultyregistration/images/msu.png" %}');
+            background-size:cover;
+        }
+    </style>
+</head>
+<font size="7">You are signed in as {{name}}<img src="{% static 'facultyregistration/images/user.png' %}" height="50" width="50"></font>
+<h1><center>Choice Filling Form</center></h1>
+<p>
+    <h4><font size="5">Following Instructions should be Followed while giving your Choices:<br>
+    1) Please select unique Course in each of the drop down list<br>
+    2) Please Select at least One Course from Each of the Semester<br>
+    3) If any one of the constraint will not be followed then the choice filling will not be considered<br>
+</font></h4></p>
+    <br>
+
+
+<form action="/facultyregistration/Storeoddchoices/" method="get">
+
+
+    <h3>
+<table border="1" height="400" width="500">
+    <tr>
+        <td><h1>Priority</h1></td>
+        <td><h1>CourseName</h1></td>
+    </tr>
+
+
+        <tr>
+            <td><label for="priority">1</label></td>
+            <td>
+                <select name="priority1">
+        {% for sem in Semx %}
+            <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                    {% for sem in Semy %}
+                    <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                      {% for sem in Semz %}
+                    <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                </select>
+        </td>
+        </tr>
+    <tr>
+            <td><label for="priority">2</label></td>
+            <td>
+                <select name="priority2">
+        {% for sem in Semx %}
+            <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                    {% for sem in Semy %}
+                    <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                      {% for sem in Semz %}
+                    <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                </select>
+        </td>
+        </tr>
+    <tr>
+            <td><label for="priority">3</label></td>
+            <td>
+                <select name="priority3">
+        {% for sem in Semx %}
+            <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                    {% for sem in Semy %}
+                    <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                      {% for sem in Semz %}
+                    <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                </select>
+        </td>
+        </tr>
+    <tr>
+            <td><label for="priority">4</label></td>
+            <td><select name="priority4">
+        {% for sem in Semx %}
+            <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                    {% for sem in Semy %}
+                    <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                      {% for sem in Semz %}
+                    <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                </select>
+        </td>
+        </tr>
+    <tr>
+            <td><label for="priority">5</label></td>
+            <td>
+                <select name="priority5">
+         {% for sem in Semx %}
+            <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                    {% for sem in Semy %}
+                    <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                      {% for sem in Semz %}
+                    <option value="{{ sem.CourseId}}"><h1>{{sem.CourseName}}(Semester{{sem.Semester}})</h1></option>
+        {% endfor %}
+                </select>
+        </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td>
+                 <input type="hidden" value="{{name}}" name="facultyname">
+                 <input type="hidden" value="{{path}}" name="path">
+                <input type="submit" value="Submit Choice Filling">
+            </td>
+        </tr>
+</table>
+    </h3>
+    <input type="hidden" value="{{path}}" name="path">
+</form>
+<br>
+
+
+{% endblock %}

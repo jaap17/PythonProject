@@ -1,0 +1,16 @@
+{% extends 'base3.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'loginmodule/css/test.css' %}" rel="stylesheet" type="text/css">
+    <style>
+     body
+        {
+            background-image:url('{% static "loginmodule/images/oxford2.png" %}')
+        }
+        </style>
+</head>
+<h2>You have logged out successfully
+Click here to <a href="/loginmodule/index/">Login</a>again
+</h2>
+{% endblock %}

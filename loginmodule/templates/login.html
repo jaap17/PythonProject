@@ -1,0 +1,30 @@
+
+{% extends 'base3.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'loginmodule/css/test.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+            background-image:url('{% static "loginmodule/images/oxford1.png" %}')
+        }
+    </style>
+</head>
+<body>
+
+<form action="/loginmodule/login/" method="post">
+
+    {% csrf_token %}
+
+
+    <h1><center><font size="10">Login Form</font></center></h1>
+    <hr><br><br><br>
+        <h2>Username  <input type="text" name="username" placeholder="--Username--"><br><br>
+    Password   <input type="password" name="password" placeholder="--Password--" ><br><br>
+
+            <input type="submit" value="submit"></h2>
+
+</form>
+</body>
+{% endblock %}

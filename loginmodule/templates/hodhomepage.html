@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+     <link href="{% static 'loginmodule/css/test.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+            background-image:url('{% static "loginmodule/images/oxford1.png" %}')
+        }
+    </style>
+</head>
+<h1><center><font size="5">You are signed in as {{hodname}} Hod Sir!!!</font><img src="{% static 'facultyregistration/images/user.png' %}" height="50" width="50"></center></h1>
+<center>
+    <br>
+    <h2>
+    <p><font color="red" size="5">Please Select the further task you want to Do</font></p>
+
+    <a href="http://127.0.0.1:8000/facultyregistration/facultyselect/">Faculty Selection</a>
+    <br><br>
+    <a href="http://127.0.0.1:8000/facultyregistration/courseselect/">Course Selection</a><br><br>
+    <form action="/CourseAllocation/Allocation/" method="get">
+        <input type="submit" name="allocation" value="Course Allocation">
+    </form><br>
+    <form action="/facultyregistration/generateform/" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Generate Form">
+    </form><br>
+        <form action="/CourseAllocation/viewallocation" method="get">
+            <input type="submit" value="View the Course Allocation">
+            <input type="hidden" name="facname" value="{{ hodname }}">
+        </form>
+    </h2>
+</center>
+{% endblock %}

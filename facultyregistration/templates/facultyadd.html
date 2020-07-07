@@ -1,0 +1,15 @@
+{% extends 'base1.html' %}
+{% block content %}
+
+<h2>
+<form method="post" action="/facultyregistration/facultyadd/">
+    {% csrf_token %}
+    <label for="FacultyId">FacultyId</label>
+    <input type="text" name="facid" placeholder="--FacultyId--">
+    <br><br>
+    <label for="FacultyName">FacultyName</label>
+    <input type="text" name="facname" placeholder="--facname--"><br><br>
+<input type="submit" value="submit">
+</form>
+</h2>
+{% endblock %}

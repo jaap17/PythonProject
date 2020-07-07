@@ -1,0 +1,26 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'facultyregistration/css/test1.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+             background-image:url('{% static "facultyregistration/images/msu.png" %}');
+             background-size:auto;
+        }
+    </style>
+</head>
+<font size="7"><center><b>You are signed in as Mr H P Singh<img src="{% static 'facultyregistration/images/user.png' %}" width="50" height="50"></b></center></font>
+<h1>Select the Type Of Semester for which the forms are suppose to be generated</h1>
+<br><br>
+<h2>
+<form action="/facultyregistration/generateformdecider/" method="post">
+    {% csrf_token %}
+    <input type="radio" name="sem" value="ODD">ODD <br><br>
+    <input type="radio" name="sem" value="EVEN">EVEN <br><br>
+    <input type="submit" value="submit">
+</form>
+</h2>
+
+{% endblock %}

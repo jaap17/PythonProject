@@ -1,0 +1,30 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content %}
+<head>
+     <link href="{% static 'CourseAllocation/css/test.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+            background-image:url('{% static "CourseAllocation/images/msu.png" %}');
+            background-size:cover;
+        }
+    </style>
+</head>
+<body>
+<h1><center><font size="5">You are signed in as {{name}} Hod Sir!!!</font><img src="{% static 'facultyregistration/images/user.png' %}" height="50" width="50"></center></h1>
+    <h2>
+    <table border="1" width="300" height="500">
+        <tr>
+            <td><font size="5">Faculty Name</font></td>
+            <td><font size="5">Course Allocated</font></td>
+        </tr>
+        {% for fac in object %}
+        <tr>
+            <td><font size="5">{{fac.FacName}}</font></td>
+            <td><font size="5">{{fac.SubjectName}}</font></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </h2></body>
+{% endblock %}

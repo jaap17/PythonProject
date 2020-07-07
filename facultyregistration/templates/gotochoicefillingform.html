@@ -1,0 +1,28 @@
+{% extends 'base1.html' %}
+{% load static %}
+<html>
+{% block content %}
+<head>
+    <link href="{% static 'facultyregistration/css/test1.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+             background-image:url('{% static "facultyregistration/images/oxford2.png" %}');
+             background-size:auto;
+        }
+    </style>
+</head>
+<body>
+<h1><center><font size="5">You are signed in as Mr H P Singh </font><img src="{% static 'facultyregistration/images/user.png' %}" width="50" height="50"></center></h1>
+<h2>{{message}}</h2>
+<br>
+<h3>
+    <form action="{{sempath1}}" method="post">
+        {% csrf_token %}
+        Click on the button to View the Choice Filling Form
+        <input type="submit" value="View the ChoiceFilling Form">
+    </form>
+</h3>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,44 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block content %}
+<head>
+
+    <style>
+        body
+        {
+             background-image:url('{% static "facultyregistration/images/oxford2.png"  %}');
+
+        }
+    </style>
+</head>
+
+<h1><center>Welcome to the Faculty Selection Page</center></h1>
+<h2>
+      <table border="1">
+          <tr>
+              <td><font size="5"><b>Faculty Name</b></font></td>
+              <td><font size="5"><b>Faculty Id</b></font></td>
+          </tr>
+        {% for fac in faculties %}
+
+              <tr>
+                  <td><font size="5"><b><i> {{ fac.FacName }}</i></b></font> {{message}}<br></td>
+                  <td><font size="5"><b><i> {{ fac.FacId }}</i></b></font></td>
+              </tr>
+
+
+        {% endfor %}
+    <tr>
+        <td>
+             <form method="POST" action="/facultyregistration/callfacultyadd/">
+        {% csrf_token %}
+        <input type="submit" value="ADD Faculty">
+    </form>
+        </td>
+        <td>
+  <form  method="POST"  id="invoice_form" action="/facultyregistration/callfacultydelete/">
+        {% csrf_token %}
+        <center><input type="submit" value="Delete Faculty"></center>
+    </form>
+        </td></tr>  </table></h2>
+{% endblock %}

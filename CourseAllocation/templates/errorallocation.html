@@ -1,0 +1,16 @@
+{% extends 'base1.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <link href="{5 static 'CourseAllocation/css/test2.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+            background-image:url('{% static "/CourseAllocation/images/oxford2.png" %}');
+        }
+    </style>
+    <h2>
+        {{message}}
+    </h2>
+</head>
+{% endblock %}

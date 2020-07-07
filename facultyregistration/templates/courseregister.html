@@ -1,0 +1,30 @@
+{% extends 'base1.html' %}
+{ % load static %}
+{% block content %}
+<html>
+<body>
+<head>
+    <link href="{ % static 'static/test.css' %}" rel="stylesheet">
+</head>
+<h1><center>Welcome to the Course Selection Page</center></h1>
+
+<h1>Select the type Of Semester for which the Course Updation/Selection has to be Done</h1>
+<br>
+
+<h2>
+    <form method="post" action="/facultyregistration/evencall/">
+        {% csrf_token %}
+        <input type="submit" value="EVEN">
+    </form>
+   <br>
+    <form method="post" action="/facultyregistration/oddcall/">
+         {% csrf_token %}
+        <input type="submit" value="ODD">
+    </form>
+
+</h2>
+<br>
+
+</body>
+</html>
+{% endblock %}

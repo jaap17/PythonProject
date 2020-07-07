@@ -1,0 +1,33 @@
+{% extends 'base4.html' %}
+{% load static %}
+{% block content %}
+<head>
+     <link href="{% static 'CourseAllocation/css/test2.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        body
+        {
+            background-image:url('{% static "CourseAllocation/images/msu.png" %}');
+
+        }
+    </style>
+</head>
+<body>
+<h1><center><font size="5">You are signed in as {{name}} </font><img src="{% static 'CourseAllocation/images/user.png' %}" height="50" width="50"></center></h1>
+
+    <table border="1" width="300" height="500" bgcolor="orange">
+        <tr>
+            <td><font size="5"><b>Course Allocated</b></font></td>
+            {% for fac in object %}
+            <td><font size="5"><b>{{fac.SubjectName}}</b></font></td>
+            {% endfor %}
+        </tr>
+        <tr>
+
+            <td><font size="5" ><b>Faculty Name</b></font></td>
+        {% for fac in object %}
+            <td><font size="5"><b>{{fac.FacName}}</b></font></td>
+            {% endfor %}
+        </tr>
+    </table>
+    </body>
+{% endblock %}

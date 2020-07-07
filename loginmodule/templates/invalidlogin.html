@@ -1,0 +1,19 @@
+
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'loginmodule/css/test.css' %}" rel="stylesheet" type="text/css">
+    <style>
+     body
+        {
+            background-image:url('{% static "loginmodule/images/oxford2.png" %}')
+        }
+        </style>
+</head>
+<body>
+<center><img src="{% static 'loginmodule/images/ddu.png' %}" height="75" width="150"><font size="10"><b>Course Allocation System</b></font></center>
+<hr>
+<h1>Invalid Username/Password</h1> <br>
+<h1>Click here to <a href="/loginmodule/index/">Login</a>again</h1>
+</body>
+{% endblock %}
